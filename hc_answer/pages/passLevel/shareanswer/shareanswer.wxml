@@ -1,0 +1,128 @@
+<view class="container" hidden="{{loginstatus}}" style="background-color:{{appname.maincolor}};background-size: 100% 100%;">
+    <image class="logopic" mode="widthFix" src="{{appname.loginimg}}"></image>
+    <button bindgetuserinfo="getUserInfo" class="register" lang="zh_CN" openType="getUserInfo" type="primary">
+        <image class="wechat" src="../../../resource/images/wechat.png"></image>
+        <text>加入房间</text>
+    </button>
+</view>
+<view class="container" wx:if="{{shareShowans==1}}">
+    <view class="container" style="background: url({{answerimg}}) no-repeat;background-size: 100% 100%;">
+        <view class="question" hidden="{{answerShow}}">
+            <image animation="{{picopacity}}" class="scorepic" data-scoreone="{{scoreone}}" data-scoretwo="{{scoretwo}}" hidden="{{Allshow}}" mode="widthFix" src="{{appname.ansdrawimg}}" wx:if="{{scoreone==scoretwo}}"></image>
+            <image animation="{{picopacity}}" class="scorepic" data-scoreone="{{scoreone}}" data-scoretwo="{{scoretwo}}" hidden="{{Allshow}}" mode="widthFix" src="{{appname.anssuccessimg}}" wx:if="{{scoreone>scoretwo}}"></image>
+            <view>
+                <view animation="{{left}}" class="ansLeft" style="background:{{appname.ansleftcolor!=''&&appname.ansleftcolor!=null?appname.ansleftcolor:'#622ab3'}};">
+                    <view class="ansuser">
+                        <image class="anspic" src="{{mylevel.avatar}}"></image>
+                        <view class="ansavatar" style="color:{{mp3.titlecolor!=''&&mp3.titlecolor!=null?mp3.titlecolor:'#fff'}}">
+              {{mylevel.nickname}}
+            </view>
+                        <image class="master" hidden="{{showmaster}}" src="{{Lstatus==0?'../../../resource/images/master.png':''}}"></image>
+                    </view>
+                </view>
+                <view animation="{{leftscore}}" class="allsecoreL" hidden="{{Allshow}}" style="background:{{appname.ansleftcolor!=''&&appname.ansleftcolor!=null?appname.ansleftcolor:'#622ab3'}};color:{{mp3.titlecolor!=''&&mp3.titlecolor!=null?mp3.titlecolor:'#fff'}};width:{{leftw}}px;left:{{-leftw}}px">
+                    <text class="secoreL">{{scoreone}}</text>
+                    <text class="fenL">分</text>
+                </view>
+            </view>
+            <view>
+                <view animation="{{right}}" class="ansRight" style="background:{{appname.ansrightcolor!=''&&appname.ansrightcolor!=null?appname.ansrightcolor:'#ffae00'}};">
+                    <view class="ansenemy">
+                        <image class="enemypic" src="{{enemy.avatar}}"></image>
+                        <view class="ansavatar" style="color:{{mp3.titlecolor!=''&&mp3.titlecolor!=null?mp3.titlecolor:'#fff'}}">
+              {{enemy.nickname}}
+            </view>
+                        <image class="master" hidden="{{showmaster}}" src="{{Rstatus==0?'../../../resource/images/master.png':''}}"></image>
+                    </view>
+                </view>
+                <view animation="{{rightscore}}" class="allsecoreR" hidden="{{Allshow}}" style="background:{{appname.ansrightcolor!=''&&appname.ansrightcolor!=null?appname.ansrightcolor:'#ffae00'}};color:{{mp3.titlecolor!=''&&mp3.titlecolor!=null?mp3.titlecolor:'#fff'}};width:{{rightw}}px;right:{{-rightw}}px">
+                    <text class="secoreR">{{scoretwo}}</text>
+                    <text class="fenR">分</text>
+                </view>
+            </view>
+            <view class="progress" hidden="{{showtime||showT}}">
+                <canvas canvasId="canvasCircle" class="circle" style="width:70px; height:70px;"></canvas>
+                <canvas canvasId="canvasArcCir" class="circle" style="width:70px;height:70px;">
+                    <cover-view class="seconds">{{seconds}}</cover-view>
+                </canvas>
+            </view>
+            <view class="progress" data-enemystatus="{{enemystatus}}" hidden="{{!showtime}}">
+                <view class="waiting" style="color:{{mp3.titlecolor!=''&&mp3.titlecolor!=null?mp3.titlecolor:'#fff'}}">{{statusshow==0?'等待好友加入...':'等待发起者开始'}}</view>
+            </view>
+            <view animation="{{down}}" class="Qnum">
+                <image mode="widthFix" src="{{appname.questypeimg}}"></image>
+                <view class="type" style="color:{{mp3.titlecolor!=''&&mp3.titlecolor!=null?mp3.titlecolor:'#fff'}}">{{ans.cate}}</view>
+                <view class="QNname" style="color:{{mp3.titlecolor!=''&&mp3.titlecolor!=null?mp3.titlecolor:'#fff'}}">第{{ans.djt}}题</view>
+            </view>
+            <view class="answer" hidden="{{!showtime}}">
+                <view class="shareandback">
+                    <view bindtap="index" class="share" style="{{fqs==0?'margin-right:0':'margin-right:50rpx'}}">
+                        <image class="sharepic" src="{{appname.giveupimg}}"></image>
+                        <text>放弃</text>
+                    </view>
+                    <form bindsubmit="getBtn" reportSubmit="true">
+                        <button class="share shareBtn" formType="submit" hidden="{{fqs==0}}" hoverClass="none" openType="share">
+                            <image class="sharepic" src="{{appname.inviteimg}}"></image>
+                            <text>邀请</text>
+                            <image class="angle" src="../../../resource/images/angle.png"></image>
+                        </button>
+                    </form>
+                </view>
+                <view wx:if="{{fq==0}}">
+                    <button bindtap="Startans" class="startbtn" hoverClass="none">开始对战</button>
+                    <view class="notice" style="color:{{mp3.titlecolor!=''&&mp3.titlecolor!=null?mp3.titlecolor:'#fff'}}">共{{quesnum}}回合，每题{{allseconds}}秒回答时间</view>
+                </view>
+            </view>
+            <view class="answer" hidden="{{showprogress}}">
+                <view animation="{{opacity}}" class="ansTitle" style="color:{{mp3.titlecolor!=''&&mp3.titlecolor!=null?mp3.titlecolor:'#fff'}};">{{ans.title}}</view>
+                <view class="Qanswer">
+                    <view animation="{{Lprogress}}" class="QanswerscoreL" hidden="{{showprogress}}">
+                        <text style="color:{{mp3.titlecolor!=''&&mp3.titlecolor!=null?mp3.titlecolor:'#fff'}}">{{mysum}}</text>
+                        <view class="userScore">
+                            <view class="score" style="top:{{100*(1-mysum/1200)}}%;background:{{appname.ansscorebarcolor!=''&&appname.ansscorebarcolor!=null?appname.ansscorebarcolor:'#fff'}}"></view>
+                        </view>
+                    </view>
+                    <view class="answers">
+                        <view animation="{{scale}}" class="scale" wx:for="{{ans.ans}}" wx:key="index">
+                            <view bindtap="{{click?'':'click'}}" class="item {{item.status==0?'itemE':''&&item.status==1?'':'itemR'}}" data-index="{{index}}" data-key="{{item.key}}" data-rstatus="{{item.rstatus}}" style="{{item.rstatus!=undefined?'':'background:#F5F5F5;color:#03024E;'}}" wx:if="{{item.ans!=''}}">
+                                <view class="showpic">
+                                    <image data-right="{{item.left}}" src="../../../resource/images/dui.png" wx:if="{{item.rstatus!=undefined&&item.status==1&&item.left==1}}"></image>
+                                    <image data-right="{{item.left}}" src="../../../resource/images/cuo.png" wx:if="{{item.rstatus!=undefined&&item.status==0&&item.left==1}}"></image>
+                                </view>
+                                <view class="itemans">{{item.ans}}</view>
+                                <view class="showpic">
+                                    <image data-right="{{item.right}}" src="../../../resource/images/dui.png" wx:if="{{item.rstatus!=undefined&&item.status==1&&item.right==1}}"></image>
+                                    <image data-right="{{item.right}}" src="../../../resource/images/cuo.png" wx:if="{{item.rstatus!=undefined&&item.status==0&&item.right==1}}"></image>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <view animation="{{Rprogress}}" class="QanswerscoreR" hidden="{{showprogress}}">
+                        <text style="color:{{mp3.titlecolor!=''&&mp3.titlecolor!=null?mp3.titlecolor:'#fff'}}">{{enemysum}}</text>
+                        <view class="userScore">
+                            <view class="score" style="top:{{100*(1-enemysum/1200)}}%;background:{{appname.ansscorebarcolor!=''&&appname.ansscorebarcolor!=null?appname.ansscorebarcolor:'#fff'}}"></view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="answer" hidden="{{Allshow}}">
+                <view style="margin-top:500rpx;">
+                    <view class="coin">
+                        <image src="{{appname.goldimg}}"></image>
+                        <text style="color:{{appname.maincolor!=''&&appname.maincolor!=null?appname.maincolor:'#7d37e3'}}">+{{add.gold}}</text>
+                    </view>
+                    <image class="noddles" mode="widthFix" src="../../../resource/images/noddles.png"></image>
+                    <view class="coin">
+                        <image src="{{appname.expeimg}}"></image>
+                        <text style="color:{{appname.maincolor!=''&&appname.maincolor!=null?appname.maincolor:'#7d37e3'}}">+{{add.expe}}</text>
+                    </view>
+                    <image class="noddles" mode="widthFix" src="../../../resource/images/noddles.png"></image>
+                    <button bindtap="passLevel" class="btn" style="background:{{appname.maincolor!=''&&appname.maincolor!=null?appname.maincolor:'#7d37e3'}}">继续挑战</button>
+                    <button class="btn1" openType="share">炫耀战绩</button>
+                </view>
+            </view>
+            <view bindtap="goindex" class="footer" style="color:{{mp3.titlecolor!=''&&mp3.titlecolor!=null?mp3.titlecolor:'#fff'}}">返回首页</view>
+        </view>
+    </view>
+    <audio id="myAudio" loop="{{!loop}}" src="{{src}}"></audio>
+</view>

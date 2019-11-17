@@ -1,0 +1,5 @@
+<view class="progress">
+    <view class="active" style="width:{{active}}%">{{active}}</view>
+    <view>/{{all}}</view>
+</view>
+<image src="https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTI1EoKbO2q5489H7E2O4994OAwbDVaDXPPjAhjKjmFKXKFMmKwkJhqRibLkCcWymMTHgasPyrmglfA/132"></image>

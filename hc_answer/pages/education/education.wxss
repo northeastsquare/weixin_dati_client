@@ -1,0 +1,16 @@
+page {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.cavjdjsj {
+    width: 100%;
+    height: 82rpx;
+    position: fixed;
+    bottom: 0;
+}
+
+.wxParse {
+    height: 100%;
+}

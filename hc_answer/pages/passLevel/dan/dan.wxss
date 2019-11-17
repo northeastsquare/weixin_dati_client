@@ -1,0 +1,98 @@
+.page {
+    position: relative;
+    height: 100%;
+}
+
+.apple {
+    width: 94%;
+    padding: 0 3%;
+    height: 10%;
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
+
+.title {
+    width: 33.3%;
+    padding: 60rpx 0 0;
+    font-size: 40rpx;
+}
+
+.main {
+    width: 90%;
+    height: 95%;
+    padding: 0rpx 5% 5%;
+}
+
+.cover {
+    width: 100%;
+    position: relative;
+}
+
+.scroll {
+    position: relative;
+    top: -28rpx;
+}
+
+.danlist {
+    width: 98%;
+    margin: 0 1%;
+    padding: 16rpx 0%;
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    background: #9554FA;
+    border-radius: 10rpx;
+    font-size: 32rpx;
+    margin-bottom: 20rpx;
+}
+
+.danitem {
+    width: 33.3%;
+    padding: 10rpx 0;
+}
+
+.danitem:nth-child(2) image {
+    width: 60rpx;
+    height: 60rpx;
+    border: 4rpx solid #fff;
+    border-radius: 50%;
+    margin-right: 10rpx;
+}
+
+.danitem:nth-child(2) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 24rpx;
+    border-left: 2rpx solid #fff;
+    border-right: 2rpx solid #fff;
+}
+
+.danitem:nth-child(3) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.headPic {
+    position: relative;
+    width: 80rpx;
+    height: 80rpx;
+}
+
+.bg {
+    width: 55rpx;
+    height: 55rpx;
+    background: #97D1B8;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 12rpx;
+    left: 50%;
+    margin-left: -27rpx;
+}

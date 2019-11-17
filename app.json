@@ -1,0 +1,27 @@
+{
+  "pages": [
+    "hc_answer/pages/index/index",
+    "hc_answer/pages/register/register",
+    "hc_answer/pages/share/sharedetail/sharedetail",
+    "hc_answer/pages/singleh5/singleh5",
+    "hc_answer/pages/upphotos/upphotos",
+    "hc_answer/pages/education/education",
+    "hc_answer/pages/passLevel/shareanswer/shareanswer",
+    "hc_answer/pages/share/detail/detail",
+    "hc_answer/pages/share/share",
+    "hc_answer/pages/test/test",
+    "hc_answer/pages/passLevel/answer/answer",
+    "hc_answer/pages/passLevel/passLevel",
+    "hc_answer/pages/passLevel/dan/dan",
+    "hc_answer/pages/pages/rankings/rankings",
+    "hc_answer/pages/pages/market/market",
+    "hc_answer/pages/pages/goods/goods",
+    "hc_answer/pages/pages/books/books",
+    "hc_answer/pages/pages/lastseason/lastseason"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "disableScroll": true
+  },
+  "sitemapLocation": "sitemap.json"
+}

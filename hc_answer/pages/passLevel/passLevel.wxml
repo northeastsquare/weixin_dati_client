@@ -1,0 +1,105 @@
+<view class="container" style="background: url({{answerimg}}) no-repeat;background-size: 100% 100%;">
+    <view class="apple" hidden="{{answer}}">
+        <image class="pass" src="{{appname.dantopimg}}">
+            <image class="cover" mode="widthFix" src="{{appname.gdbarimg}}"></image>
+            <view class="season">
+                <view class="titleMain">
+                    <view bindtap="array" class="title">{{season.name}}</view>
+                    <view class="time">{{season.starttime}}—{{season.endtime}}</view>
+                </view>
+                <view class="seasonMain">
+                    <view class="coin" style="background:{{appname.goldbgcolor!=''&&appname.goldbgcolor!=null?appname.goldbgcolor:'#622ab3'}}">
+                        <image class="coinPic" src="{{appname.goldimg}}"></image>
+                        <text style="color:{{appname.goldfontcolor!=''&&appname.goldfontcolor!=null?appname.goldfontcolor:'#feb202'}}">{{mylevel.gold}}</text>
+                    </view>
+                    <view class="useprop" style="background:{{appname.goldbgcolor!=''&&appname.goldbgcolor!=null?appname.goldbgcolor:'#622ab3'}}">
+                        <view bindtap="getM" class="pic" data-cc="{{item.cc}}" data-id="{{item.id}}" data-index="{{index}}" data-jb="{{item.jb}}" data-jf="{{item.jf}}" data-jy="{{item.jy}}" data-name="{{item.name}}" data-num="{{item.num}}" data-sj="{{item.sj}}" data-synum="{{item.synum}}" data-usethumb="{{item.usethumb}}" wx:for="{{Oftenuse}}" wx:key="index">
+                            <image src="{{item.open==undefined?item.thumb:item.usethumb}}"></image>
+                            <view class="usereward" wx:if="{{item.alltime!=''}}">{{item.alltime}}</view>
+                            <view class="usereward">{{item.ccnum}}</view>
+                        </view>
+                    </view>
+                </view>
+                <image bindtap="dan" class="dan" src="{{appname.danintoimg}}"></image>
+            </view>
+        </image>
+        <scroll-view scrollY class="levels" scrollTop="{{scrolltop}}" style="height:79%;">
+            <view bindtap="{{index!=array.length-1||mylevel.dan==array.length?'match':''}}" class="level" data-dan="{{mylevel.dan}}" data-id="{{item.dan_id}}" data-index="{{index}}" data-needcoin="{{item.needcoin}}" wx:for="{{array}}" wx:key="index">
+                <form bindsubmit="getBtn" reportSubmit="true">
+                    <button class="form" formType="submit" hoverClass="none">
+                        <image class="levelBg" mode="widthFix" src="{{item.thumb}}">
+                            <view class="levelMain">
+                                <view class="levelLeft">
+                                    <view class="levelTitle">{{item.title}}</view>
+                                    <view class="row">
+                                        <text>需要金币：</text>
+                                        <image src="{{appname.goldimg}}"></image>
+                                        <text class="coins">{{item.needcoin}}</text>
+                                    </view>
+                                    <view class="levelCoin">
+                                        <view class="row">
+                                            <text>奖励金币：</text>
+                                            <image src="{{appname.goldimg}}"></image>
+                                            <text class="coins">{{item.reword}}</text>
+                                        </view>
+                                    </view>
+                                </view>
+                                <view class="levelRight" style="background:{{appname.goldbgcolor!=''&&appname.goldbgcolor!=null?appname.goldbgcolor:'#622ab3'}}" wx:if="{{item.status==0}}">
+                                    <image src="{{item.status==0?appname.starlevelimg:'../../resource/images/yellowstar.png'}}" wx:for="{{item.pass}}" wx:key="index"></image>
+                                </view>
+                                <view class="levelRight" style="background:{{appname.goldbgcolor!=''&&appname.goldbgcolor!=null?appname.goldbgcolor:'#622ab3'}}" wx:else>
+                                    <image src="../../resource/images/selstar.png" wx:for="{{item.pass}}" wx:key="index"></image>
+                                </view>
+                            </view>
+                        </image>
+                    </button>
+                </form>
+                <view class="shadow" data-index="{{index}}" data-status="{{array[index-1].status==1}}" wx:if="{{index==array.length-1&&array[index-1].status==0}}"></view>
+                <image class="lock" mode="aspectFit" src="../../resource/images/lock.png" wx:if="{{index==array.length-1&&array[index-1].status==0}}"></image>
+                <image class="more" mode="aspectFit" src="../../resource/images/more.png" wx:if="{{index==array.length-1&&array[index-1].status==0}}"></image>
+            </view>
+        </scroll-view>
+    </view>
+    <view catchtouchmove="preventTouchMove" class="drawer_screen" wx:if="{{getM}}"></view>
+    <view animation="{{animationData}}" catchtouchmove="preventTouchMove" class="drawer_attr_box" wx:if="{{getM}}">
+        <view class="getM">
+            <image bindtap="close" class="close" mode="widthFix" src="../../resource/images/close2.png"></image>
+            <view class="getPic">
+                <view class="mianpics">
+                    <image class="mianpic" mode="widthFix" src="{{detail.usethumb}}"></image>
+                    <view class="usenum" style="background:{{appname.maincolor!=''&&appname.maincolor!=null?appname.maincolor:'#7d37e3'}}" wx:if="{{detail.cc!=0}}">{{detail.cc}}场</view>
+                    <view class="usenum" style="background:{{appname.maincolor!=''&&appname.maincolor!=null?appname.maincolor:'#7d37e3'}}" wx:if="{{detail.sj!=0}}">{{detail.sj}}时</view>
+                    <image class="effectpic" mode="widthFix" src="../../resource/images/exper02.png">
+                        <view class="effect" wx:if="{{detail.jy!=0}}">+{{detail.jy}}%</view>
+                        <view class="effect" wx:if="{{detail.jb!=0}}">+{{detail.jb}}%</view>
+                        <view class="effect" wx:if="{{detail.jf!=0}}">+{{detail.jf}}%</view>
+                    </image>
+                </view>
+            </view>
+            <view class="expername" style="background:{{appname.maincolor!=''&&appname.maincolor!=null?appname.maincolor:'#7d37e3'}}">{{detail.name}}</view>
+            <view class="expermain" wx:if="{{detail.jy!=0}}">使用后，{{detail.cc!=0?'下'+detail.cc+'场':''}}{{detail.sj!=0?detail.sj+'小时内':''}}排位赛中的经验+{{detail.jy}}%</view>
+            <view class="expermain" wx:if="{{detail.jb!=0}}">使用后，{{detail.cc!=0?'下'+detail.cc+'场':''}}{{detail.sj!=0?detail.sj+'小时内':''}}排位赛中的金币+{{detail.jb}}%</view>
+            <view class="expermain" wx:if="{{detail.jf!=0}}">使用后，下一场排位赛中的得分+{{detail.jf}}%</view>
+            <view class="footer">
+                <view class="surplus" wx:if="{{detail.num!=0}}">剩余数量{{detail.num}}</view>
+                <button bindtap="{{disabled?'':'use'}}" class="usebtn" data-id="{{detail.id}}" data-index="{{detail.index}}" wx:if="{{detail.num!=0}}">使用</button>
+                <button bindtap="buy" class="usebtn" style="background:{{appname.maincolor!=''&&appname.maincolor!=null?appname.maincolor:'#7d37e3'}}" wx:if="{{detail.num==0}}">购买</button>
+            </view>
+        </view>
+    </view>
+    <view catchtouchmove="preventTouchMove" class="drawer_screen" hidden="{{getdanmoney}}"></view>
+    <view class="apples" hidden="{{getdanmoney}}" style="background:url({{appname.seasonbgimg}}) no-repeat;background-size: 100% 100%;">
+        <image class="headPic" mode="widthFix" src="{{mylevel.border}}" style="{{mylevel.border==''?'margin-top:20rpx':''}}">
+            <image class="bg" data-src="{{mylevel.avatar}}" src="{{mylevel.avatar}}" style="{{mylevel.border==''?'border: 6rpx solid #fff;':''}}"></image>
+        </image>
+        <view class="mynickname">{{mylevel.nickname}}</view>
+        <image class="congratulation" mode="widthFix" src="{{result.reachimg}}"></image>
+        <view class="notice">
+      {{result.moneytime}}
+    </view>
+        <form bindsubmit="getBtn" reportSubmit="true">
+            <button class="btnget" formType="submit" hoverClass="none">知道了</button>
+        </form>
+    </view>
+</view>
+<audio id="myAudios" loop="{{!loop}}" src="{{src}}"></audio>

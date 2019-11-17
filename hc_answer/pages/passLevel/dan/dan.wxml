@@ -1,0 +1,24 @@
+<view class="container" style="background: url({{appname.answerimg}}) no-repeat;background-size: 100% 100%;">
+    <view class="page">
+        <view class="apple">
+            <view class="title" style="color:{{appname.tabfontcolor!=''&&appname.tabfontcolor!=null?appname.tabfontcolor:'#fff'}}" wx:for="{{title}}" wx:key="index">{{item}}</view>
+        </view>
+        <view class="main">
+            <image class="cover" mode="widthFix" src="{{appname.gdbarimg}}"></image>
+            <scroll-view scrollY class="scroll" style="height:90%;">
+                <view class="danlist" style="background:{{appname.rankbgcolor!=''&&appname.rankbgcolor!=null?appname.rankbgcolor:'#b589fc'}};color:{{appname.tabfontcolor!=''&&appname.tabfontcolor!=null?appname.tabfontcolor:'#fff'}}" wx:for="{{dan}}" wx:key="index">
+                    <view class="danitem">{{item.name}}</view>
+                    <view class="danitem">
+                        <image mode="widthFix" src="{{item.rewardimg}}"></image>
+                        <text style="font-size:22rpx;">{{item.rewardname}}×{{item.rewardnum}}</text>
+                    </view>
+                    <view class="danitem">
+                        <image class="headPic" mode="widthFix" src="{{item.border}}">
+                            <view class="bg" style="{{item.border==''?'border:6rpx solid #fff;':''}}"></view>
+                        </image>
+                    </view>
+                </view>
+            </scroll-view>
+        </view>
+    </view>
+</view>

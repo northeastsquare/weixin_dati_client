@@ -1,0 +1,21 @@
+<view class="container" style="background: url({{answerimg}}) no-repeat;background-size: 100% 100%;">
+    <view class="apple">
+        <ec-canvas canvasId="mychart-graph" ec="{{ec}}" id="mychart-dom-graph" style="width:276px;height:276px;"></ec-canvas>
+        <cover-image class="avatar" src="{{mylevel.avatar}}"></cover-image>
+    </view>
+    <view class="notice">
+        <view>简直太精彩啦！想知道你知识能力吗？</view>
+        <view>更多有趣题目等待你挑战</view>
+    </view>
+    <button bindtap="jumpdan" class="btn" hoverClass="none">继续游戏</button>
+    <view class="shareAsave">
+        <button class="share" openType="share" type="groupName">
+            <image src="../../resource/images/shares.png"></image>
+            <text>分享给好友</text>
+        </button>
+        <button bindtap="download" class="share" style="background:#7ED320;">
+            <image src="../../resource/images/download.png"></image>
+            <text>保存到相册</text>
+        </button>
+    </view>
+</view>

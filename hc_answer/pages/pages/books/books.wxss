@@ -1,0 +1,349 @@
+.apple {
+    padding-top: 5%;
+    height: 97%;
+}
+
+.pass {
+    width: 94%;
+    padding: 0 3%;
+    border-radius: 20rpx;
+    position: relative;
+    height: 22%;
+}
+
+.dan {
+    position: absolute;
+    top: 10rpx;
+    right: 10rpx;
+    width: 60rpx;
+    height: 60rpx;
+}
+
+.cover {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -46%;
+    width: 92%;
+}
+
+.levels {
+    position: relative;
+    top: -30rpx;
+    width: 100%;
+}
+
+.level {
+    width: 90%;
+    margin: 0 5%;
+    margin-bottom: 20rpx;
+    position: relative;
+    background: #fff;
+    border-radius: 20rpx;
+    display: flex;
+    flex-direction: row;
+}
+
+.left {
+    width: 24%;
+    background: #CC00FF;
+    border-top-left-radius: 20rpx;
+    border-bottom-left-radius: 20rpx;
+    font-size: 30rpx;
+    color: #fff;
+}
+
+.leftMain {
+    padding: 30rpx 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.leftMain image {
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 50%;
+    margin-bottom: 10rpx;
+}
+
+.right {
+    width: 76%;
+    background: #9253F7;
+    border-bottom-right-radius: 20rpx;
+    border-top-right-radius: 20rpx;
+}
+
+.rightMain {
+    width: 90%;
+    padding: 20rpx 5% 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.books {
+    width: 33.3%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 26rpx;
+    color: #fff;
+    margin-bottom: 30rpx;
+}
+
+.bookspic {
+    position: relative;
+    margin: 6rpx 0;
+}
+
+.num {
+    position: absolute;
+    top: 6rpx;
+    left: -16rpx;
+    background: #E52036;
+    color: #fff;
+    font-size: 20rpx;
+    width: 30rpx;
+    height: 30rpx;
+    text-align: center;
+    line-height: 30rpx;
+    border-radius: 50%;
+}
+
+.uplevel {
+    position: absolute;
+    bottom: -10rpx;
+    right: -10rpx;
+    width: 40rpx;
+    height: 40rpx;
+    border-radius: 50%;
+    border: 3rpx solid #fff;
+}
+
+.pic {
+    width: 90rpx;
+    height: 90rpx;
+    border-radius: 50%;
+    display: block;
+}
+
+.title {
+    font-size: 22rpx;
+}
+
+.drawer_screen {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #000;
+    opacity: 0.6;
+    overflow: hidden;
+    z-index: 999999999999;
+    color: #fff;
+}
+
+.drawer_attr_box {
+    width: 70%;
+    height: 700rpx;
+    position: fixed;
+    top: 50%;
+    margin-top: -50%;
+    left: 50%;
+    margin-left: -35%;
+    z-index: 99999999999999999999;
+}
+
+.getM {
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    background: #fff;
+    border-radius: 20rpx;
+    margin: 0;
+}
+
+.drawer_attr_box1 {
+    width: 70%;
+    height: 560rpx;
+    position: fixed;
+    top: 56%;
+    margin-top: -50%;
+    left: 50%;
+    margin-left: -28%;
+    z-index: 99999999999999999999;
+}
+
+.getM1 {
+    width: 80%;
+    position: absolute;
+    height: 100%;
+    background: #fff;
+    border-radius: 20rpx;
+    margin: 0;
+}
+
+.getPic {
+    width: 130rpx;
+    height: 130rpx;
+    margin: -65rpx auto 0;
+    display: block;
+    border-radius: 50%;
+    border: 6rpx solid #fff;
+    background: #fff;
+}
+
+.mianpic {
+    border-radius: 50%;
+    width: 130rpx;
+    height: 130rpx;
+    display: block;
+}
+
+.mianpics {
+    position: relative;
+}
+
+.effectpic {
+    width: 130rpx;
+    height: 40rpx;
+    position: relative;
+    display: block;
+    bottom: 30rpx;
+}
+
+.effect {
+    width: 130rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+    font-size: 24rpx;
+    position: absolute;
+    bottom: 0;
+    color: #7743C8;
+    text-align: center;
+}
+
+.usenum {
+    height: 30rpx;
+    line-height: 30rpx;
+    padding: 0rpx 10rpx;
+    position: absolute;
+    top: 15%;
+    right: 0;
+    background: #7743C8;
+    font-size: 24rpx;
+    color: #FBAF08;
+    border-radius: 20rpx;
+}
+
+.close {
+    position: absolute;
+    top: 16rpx;
+    right: 20rpx;
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.expername {
+    background: #7743C9;
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    margin-top: 30rpx;
+    font-size: 40rpx;
+    padding: 20rpx 0;
+}
+
+.expermain {
+    font-size: 28rpx;
+    color: #4A4A4A;
+    font-weight: bolder;
+    width: 80%;
+    margin: 20rpx auto;
+    text-align: center;
+}
+
+.surplus {
+    font-size: 22rpx;
+    color: #7743C8;
+    text-align: center;
+    margin: 20rpx 0;
+}
+
+.usebtn {
+    font-size: 50rpx;
+    background: #09BB07;
+    color: #fff;
+    width: 60%;
+    border-radius: 14rpx;
+    text-align: center;
+    padding: 14rpx 0;
+    margin: 0 auto;
+}
+
+.footer {
+    width: 100%;
+    position: absolute;
+    bottom: 40rpx;
+}
+
+.booklevel {
+    color: #7743C8;
+    text-align: center;
+    font-size: 36rpx;
+}
+
+.up {
+    width: 20%;
+    margin: 0 auto;
+    background: #A07BD8;
+    color: #fff;
+    font-size: 22rpx;
+    text-align: center;
+    border-radius: 30rpx;
+}
+
+.bookNum {
+    width: 46%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding-top: 30rpx;
+}
+
+.needbook {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 24rpx;
+    color: #8557CE;
+}
+
+.needbook image {
+    width: 80rpx;
+    height: 80rpx;
+    margin-bottom: 10rpx;
+}
+
+.needcoin image {
+    width: 80rpx;
+    height: 80rpx;
+}
+
+.success {
+    font-size: 40rpx;
+    color: #157C48;
+    text-align: center;
+}
+
+.fail {
+    font-size: 40rpx;
+    color: #F96E4A;
+    text-align: center;
+}

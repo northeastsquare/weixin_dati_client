@@ -1,0 +1,40 @@
+<view class="container" style="background: url({{answerimg}}) no-repeat;background-size: 100% 100%;">
+    <view class="page">
+        <view class="apple" style="color:{{appname.tabfontcolor!=''&&appname.tabfontcolor!=null?appname.tabfontcolor:'#fff'}}">
+            <view bindtap="click" class="{{status==0?'seltitle':'title'}}" data-index="0">好友排行</view>
+            <view class="line"></view>
+            <view bindtap="click" class="{{status==1?'seltitle':'title'}}" data-index="1">{{worldtext}}</view>
+        </view>
+        <view class="main">
+            <image class="cover" mode="widthFix" src="{{appname.gdbarimg}}"></image>
+            <scroll-view scrollY class="scroll" style="height:80%;">
+                <view class="rankings" style="background:{{appname.rankbgcolor!=''&&appname.rankbgcolor!=null?appname.rankbgcolor:'#b589fc'}}" wx:for="{{dan}}" wx:key="index">
+                    <image class="triangle" src="{{appname.ranknumimg}}">
+                        <view class="num">{{index+1}}</view>
+                    </image>
+                    <view class="containpic">
+                        <image class="avatar" src="{{item.avatar}}"></image>
+                    </view>
+                    <view class="detail">
+                        <view class="top">
+                            <view class="name" style="color:{{appname.tabfontcolor!=''&&appname.tabfontcolor!=null?appname.tabfontcolor:'#fff'}}">{{item.nickname}}</view>
+                            <view class="form" style="color:{{appname.tabfontcolor!=''&&appname.tabfontcolor!=null?appname.tabfontcolor:'#fff'}}">来自：{{item.city==null||item.city==''?'未知':item.city}}</view>
+                        </view>
+                        <view class="bottom">
+                            <view class="dan" style="background:{{appname.listbgcolor!=''&&appname.listbgcolor!=null?appname.listbgcolor:'#b589fc'}}">{{item.dan}}</view>
+                            <view class="starts" style="background:{{appname.maincolor!=''&&appname.maincolor!=null?appname.maincolor:'#7d37e3'}}">
+                                <image class="start" src="../../../resource/images/yellowstar.png"></image>
+                {{item.star}}
+              </view>
+                        </view>
+                    </view>
+                </view>
+            </scroll-view>
+            <view class="footer">
+                <image class="lookdan" src="">
+                    <view bindtap="lastseason" class="look" style="background:{{appname.maincolor!=''&&appname.maincolor!=null?appname.maincolor:'#7d37e3'}}">查看上赛季英雄榜</view>
+                </image>
+            </view>
+        </view>
+    </view>
+</view>

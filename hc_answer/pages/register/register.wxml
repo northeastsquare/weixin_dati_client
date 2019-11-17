@@ -1,0 +1,7 @@
+<view class="container" hidden="{{stake==1?true:false}}" style="background: url() no-repeat;background-color:{{appname.maincolor}};background-size: 100% 100%;">
+    <image class="logopic" mode="widthFix" src="{{appname.loginimg}}"></image>
+    <button bindgetuserinfo="getUserInfo" class="register" lang="zh_CN" openType="getUserInfo" type="primary">
+        <image class="wechat" src="../../resource/images/wechat.png"></image>
+        <text>微信登陆</text>
+    </button>
+</view>

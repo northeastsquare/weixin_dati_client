@@ -1,0 +1,89 @@
+<view class="container" style="background: url({{answerimg}}) no-repeat;background-size: 100% 100%;">
+    <view class="apple" hidden="{{answer}}">
+        <image class="pass" src="{{appname.knowledgetopimg}}">
+            <image class="cover" mode="widthFix" src="{{appname.gdbarimg}}"></image>
+        </image>
+        <scroll-view scrollY class="levels" scrollTop="{{scrolltop}}" style="height:79%;">
+            <view class="level" wx:for="{{getBooks}}" wx:key="index">
+                <view class="left" style="background:{{appname.zssleftcolor!=''&&appname.zssleftcolor!=null?appname.zssleftcolor:'#CC00FF'}}">
+                    <view class="leftMain">
+                        <image src="{{item.thumbs}}"></image>
+                        <text>{{item.name}}</text>
+                    </view>
+                </view>
+                <view class="right" style="background:{{appname.zssrightcolor!=''&&appname.zssrightcolor!=null?appname.zssrightcolor:'#9253F7'}}">
+                    <view class="rightMain">
+                        <view bindtap="show" class="books" data-coin="{{items.next.gold}}" data-have="{{items.have}}" data-id="{{items.id}}" data-level="{{items.level}}" data-maxlevel="{{items.maxlevel}}" data-name="{{items.name}}" data-need="{{items.next.num}}" data-plus="{{items.plus}}" data-score="{{items.next.score}}" data-thumb="{{items.next.thumb}}" data-thumbs="{{items.thumbs}}" wx:for="{{item.child}}" wx:for-item="items" wx:key="index">
+                            <text>{{items.name}}</text>
+                            <view class="bookspic">
+                                <view class="num" wx:if="{{items.have!=null&&items.have!=0}}">{{items.have}}</view>
+                                <image class="uplevel" src="../images/uplevel.png" wx:if="{{items.have-items.next.num>=0}}"></image>
+                                <image class="pic" src="{{items.thumbs}}"></image>
+                            </view>
+                            <text class="title">等级{{items.level}}</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+    <view catchtouchmove="preventTouchMove" class="drawer_screen" wx:if="{{getM}}"></view>
+    <view animation="{{animationData}}" catchtouchmove="preventTouchMove" class="drawer_attr_box" wx:if="{{getM}}">
+        <view class="getM">
+            <image bindtap="close" class="close" mode="widthFix" src="../../../resource/images/close2.png"></image>
+            <view class="getPic">
+                <view class="mianpics">
+                    <image class="mianpic" src="{{usebook.thumbs}}"></image>
+                </view>
+            </view>
+            <view class="expername" style="background:{{appname.maincolor!=''&&appname.maincolor!=null?appname.maincolor:'#7d37e3'}}">{{usebook.name}}</view>
+            <view class="booklevel" style="color:{{appname.maincolor!=''&&appname.maincolor!=null?appname.maincolor:'#7743C8'}}">等级{{usebook.level}}</view>
+            <view class="expermain">“{{usebook.name}}”类题目得分增加{{usebook.plus}}%>{{usebook.score}}%</view>
+            <view class="up" style="background:{{appname.maincolor!=''&&appname.maincolor!=null?appname.maincolor:'#A07BD8'}}">升级消耗</view>
+            <view class="bookNum">
+                <view class="needbook">
+                    <image src="{{usebook.thumb}}"></image>
+                    <text style="color:{{appname.maincolor!=''&&appname.maincolor!=null?appname.maincolor:'#8557CE'}}">{{usebook.have}}/{{usebook.need}}</text>
+                </view>
+                <view class="needbook">
+                    <image src="{{appname.goldimg}}"></image>
+                    <text style="color:#F9AB10;">{{usebook.coin}}</text>
+                </view>
+            </view>
+            <view class="footer">
+                <view bindtap="upLevel" class="usebtn" data-id="{{usebook.id}}">升级</view>
+            </view>
+        </view>
+    </view>
+    <view catchtouchmove="preventTouchMove" class="drawer_screen" wx:if="{{success}}"></view>
+    <view animation="{{animationData}}" catchtouchmove="preventTouchMove" class="drawer_attr_box1" wx:if="{{success}}">
+        <view class="getM1">
+            <image bindtap="close" class="close" mode="widthFix" src="../../../resource/images/close2.png"></image>
+            <view class="getPic">
+                <view class="mianpics">
+                    <image class="mianpic" src="{{usebook.thumbs}}"></image>
+                </view>
+            </view>
+            <view wx:if="{{fail==0}}">
+                <view class="success">升级成功</view>
+                <view class="booklevel">等级{{usebook.level}}</view>
+                <view class="expermain" style="margin:90rpx auto;">{{usebook.name}}类题目得分增加{{getexper}}%</view>
+            </view>
+            <view wx:if="{{fail==1}}">
+                <view class="fail" style="margin-top:50rpx;">知识书数量不足</view>
+                <view class="expermain" style="margin:10rpx auto 40rpx;font-size:26rpx;font-weight:500;">请到商城购买</view>
+                <view class="needbook">
+                    <image src="{{usebook.thumb}}"></image>
+                    <text style="color:{{appname.maincolor!=''&&appname.maincolor!=null?appname.maincolor:'#8557CE'}}">{{usebook.have}}/{{usebook.need}}</text>
+                </view>
+            </view>
+            <view wx:if="{{fail==2}}">
+                <view class="fail" style="margin-top:50rpx;">金币不足</view>
+                <view class="expermain" style="margin:10rpx auto 40rpx;font-size:26rpx;font-weight:500;">请到商城购买或着转发分享获取金币</view>
+            </view>
+            <view class="footer">
+                <view bindtap="{{fail==true?'buy':'close'}}" class="usebtn" style="{{fail==true?'background:#F4A320;':'background:#7ED320'}}">{{fail==true?'购买':'返回'}}</view>
+            </view>
+        </view>
+    </view>
+</view>

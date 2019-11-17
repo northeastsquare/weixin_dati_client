@@ -1,0 +1,527 @@
+.matchContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.matching {
+    width: 600rpx;
+    height: 600rpx;
+    position: relative;
+    margin-top: -100rpx;
+}
+
+.lastque {
+    width: 70%;
+    margin-top: 30rpx;
+    transform: scale(0,0);
+}
+
+.matchingUser {
+    width: 100rpx;
+    height: 100rpx;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: 0;
+    border-radius: 50%;
+    margin-top: -50rpx;
+    margin-left: -50rpx;
+}
+
+.position {
+    position: relative;
+}
+
+.bg {
+    width: 76rpx;
+    height: 76rpx;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    margin: 0;
+    margin-left: -38rpx;
+    bottom: 14rpx;
+}
+
+.bg1 {
+    width: 90rpx;
+    height: 90rpx;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    margin: 0;
+    margin-left: -45rpx;
+    bottom: 16rpx;
+}
+
+.userMain {
+    width: 100%;
+    position: absolute;
+    bottom: 100rpx;
+    text-align: center;
+    color: #fff;
+    display: flex;
+    font-size: 30rpx;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.userMain>text:nth-child(2) {
+    font-size: 26rpx;
+    margin: 10rpx 0;
+}
+
+.userMain>text:nth-child(3) {
+    font-size: 32rpx;
+    opacity: 0.6;
+}
+
+.usercoin {
+    margin-top: 20rpx;
+    display: flex;
+    align-items: center;
+    color: #f2b222;
+}
+
+.usercoin>image {
+    width: 40rpx;
+    height: 40rpx;
+    border-radius: 50%;
+    margin-right: 20rpx;
+}
+
+.matched {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.vs {
+    width: 100%;
+    height: 100%;
+}
+
+.left,.right {
+    width: 40%;
+}
+
+.user {
+    width: 60%;
+    position: absolute;
+    right: 0rpx;
+    top: 112rpx;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.user>image {
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 50%;
+}
+
+.enemy {
+    width: 60%;
+    position: absolute;
+    left: 0rpx;
+    top: 30rpx;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.enemy>image {
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 50%;
+}
+
+.avatar {
+    margin-top: 40rpx;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 26rpx;
+    z-index: -1;
+}
+
+.avatar text {
+    text-align: center;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 50rpx;
+    z-index: 9999999999;
+}
+
+.avatar image {
+    width: 160%;
+}
+
+.left {
+    position: absolute;
+    overflow: inherit;
+    top: -290rpx;
+    left: -300rpx;
+}
+
+.right {
+    position: absolute;
+    overflow: inherit;
+    bottom: -90rpx;
+    right: -300rpx;
+    z-index: 10;
+}
+
+.vs {
+    position: absolute;
+}
+
+.question {
+    width: 100%;
+}
+
+.circle {
+    position: absolute;
+    top: 45rpx;
+    left: 0;
+    right: 0;
+    margin: auto;
+    color: #fff;
+}
+
+.seconds {
+    width: 100rpx;
+    height: 100rpx;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    line-height: 100rpx;
+    background: #03024d;
+    font-size: 36rpx;
+    border-radius: 50%;
+    margin-top: -50rpx;
+    margin-left: -50rpx;
+    z-index: -1;
+}
+
+.scorepic {
+    position: absolute;
+    top: 40rpx;
+    left: 50%;
+    width: 50%;
+    margin-left: -25%;
+    z-index: 9999999999999999999;
+}
+
+.ansLeft {
+    position: absolute;
+    top: 40rpx;
+    left: -125px;
+    color: #fff;
+    width: 250rpx;
+    text-align: left;
+    height: 150rpx;
+    background: #622ab3;
+    border-top-right-radius: 75rpx;
+    border-bottom-right-radius: 75rpx;
+    z-index: 99999999;
+}
+
+.fenR {
+    font-size: 50rpx;
+    margin-right: 10rpx;
+}
+
+.fenL {
+    font-size: 50rpx;
+}
+
+.secoreL {
+    padding-left: 20rpx;
+}
+
+.allsecoreL {
+    position: absolute;
+    top: 190rpx;
+    color: #fff;
+    height: 200rpx;
+    line-height: 200rpx;
+    font-size: 70rpx;
+    background: #622ab3;
+    border-top-right-radius: 100rpx;
+    border-bottom-right-radius: 100rpx;
+    z-index: 99999;
+}
+
+.ansRight {
+    position: absolute;
+    top: 40rpx;
+    right: -125px;
+    color: #fff;
+    width: 250rpx;
+    height: 150rpx;
+    border-top-left-radius: 75rpx;
+    border-bottom-left-radius: 75rpx;
+    background: #ffae00;
+    z-index: 99999999;
+}
+
+.allsecoreR {
+    position: absolute;
+    top: 190rpx;
+    color: #fff;
+    height: 200rpx;
+    line-height: 200rpx;
+    font-size: 70rpx;
+    border-top-left-radius: 100rpx;
+    border-bottom-left-radius: 100rpx;
+    background: #ffae00;
+    text-align: right;
+    z-index: 99999;
+}
+
+.ansuser>image,.ansenemy>image {
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 50%;
+    margin-bottom: 20rpx;
+}
+
+.ansuser {
+    width: 140rpx;
+    text-align: center;
+    position: absolute;
+    right: 10rpx;
+    top: 13rpx;
+    font-size: 26rpx;
+}
+
+.ansavatar {
+    width: 140rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    z-index: 99999999;
+}
+
+.ansenemy {
+    width: 140rpx;
+    text-align: center;
+    position: absolute;
+    left: 10rpx;
+    top: 13rpx;
+    font-size: 26rpx;
+}
+
+.Qnum {
+    width: 400rpx;
+    position: absolute;
+    top: 30rpx;
+    opacity: 0;
+    left: 50%;
+    font-size: 30rpx;
+    margin-left: -200rpx;
+}
+
+.Qnum image {
+    width: 300rpx;
+    display: block;
+    margin: auto;
+}
+
+.type {
+    width: 80rpx;
+    text-align: center;
+    position: absolute;
+    top: 70rpx;
+    left: 0;
+    right: 0;
+    margin: auto;
+    color: #fff;
+}
+
+.QNname {
+    color: #fff;
+    position: absolute;
+    top: 170rpx;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+}
+
+.answer {
+    width: 86%;
+    padding: 0 7%;
+    text-align: center;
+    margin-top: 300rpx;
+    color: #fff;
+    font-size: 30rpx;
+}
+
+.ansTitle {
+    font-size: 30rpx;
+    width: 96%;
+    margin: 0 auto;
+    text-align: center;
+    opacity: 0;
+    height: 120rpx;
+}
+
+.Qanswer {
+    width: 100%;
+    display: flex;
+    height: 640rpx;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 40rpx;
+}
+
+.answers {
+    display: flex;
+    flex-direction: column;
+    width: 66%;
+    margin: 0 7%;
+}
+
+.scale {
+    transform: scale(0,0);
+}
+
+.answers image {
+    width: 30rpx;
+    height: 30rpx;
+    border-radius: 50%;
+}
+
+.item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 40rpx;
+    padding: 0 20rpx;
+    height: 120rpx;
+    border-radius: 60rpx;
+}
+
+.itemR {
+    background: #93E03D;
+    color: #fff;
+}
+
+.itemE {
+    background: #FF402D;
+    color: #fff;
+}
+
+.itemans {
+    width: 80%;
+}
+
+.showpic {
+    width: 10%;
+}
+
+.QanswerscoreL {
+    position: relative;
+    left: -100px;
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 10%;
+    font-size: 40rpx;
+}
+
+.QanswerscoreR {
+    position: relative;
+    right: -100px;
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 10%;
+    font-size: 40rpx;
+}
+
+.userScore {
+    height: 100%;
+    width: 30rpx;
+    border: 2rpx solid #fff;
+    background: #03024E;
+    border-radius: 20rpx;
+    position: relative;
+}
+
+.score {
+    width: 30rpx;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: #93E03D;
+    border-radius: 15rpx;
+}
+
+.noddles {
+    width: 60%;
+    display: block;
+    margin: 0 auto;
+}
+
+.coin {
+    height: 80rpx;
+    max-width: 200rpx;
+    padding: 0 30rpx 0 0;
+    border-radius: 40rpx;
+    background: rgba(255,255,255,0.3);
+    color: #000;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 40rpx;
+    margin: 20rpx auto;
+}
+
+.coin>image {
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 50%;
+    margin-right: 20rpx;
+}
+
+.btn {
+    width: 60%;
+    height: 100rpx;
+    line-height: 100rpx;
+    background: #622AB3;
+    color: #fff;
+    border-radius: 50rpx;
+    margin: 130rpx auto 30rpx;
+}
+
+.btn1 {
+    width: 60%;
+    height: 100rpx;
+    line-height: 100rpx;
+    background: #FC3465;
+    border-radius: 50rpx;
+    color: #fff;
+}

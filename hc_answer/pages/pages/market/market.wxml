@@ -1,0 +1,37 @@
+<view class="container" style="background: url({{answerimg}}) no-repeat;background-size: 100% 100%;">
+    <view class="apple">
+        <scroll-view scrollY class="goodsList">
+            <image bindtap="buy" class="ad" data-id="{{sales.id}}" data-index="-1" src="{{sales.newthumb}}" wx:if="{{sales.newthumb!=undefined}}"></image>
+            <view class="goods">
+                <view bindtap="buy" class="goodsdetail" data-id="{{sales.id}}" data-index="{{index}}" wx:for="{{goods}}" wx:key="index">
+                    <view class="goodsname" style="background:{{appname.maincolor!=''&&appname.maincolor!=null?appname.maincolor:'#7d37e3'}}">{{item.name}}</view>
+                    <image src="{{item.thumb}}"></image>
+                    <view class="price">￥{{item.price}}</view>
+                </view>
+            </view>
+        </scroll-view>
+        <view class="footer">
+            <button class="share" hoverClass="none" openType="share">
+                <view class="share" style="background:{{appname.maincolor!=''&&appname.maincolor!=null?appname.maincolor:'#7d37e3'}}">免费金币</view>
+            </button>
+            <view class="notice">
+                <text style="color:{{appname.nicknamecolor!=''&&appname.nicknamecolor!=null?appname.nicknamecolor:'#fff'}}">分享到微信群，可以获得{{bottom}}</text>
+                <image src="{{appname.goldimg}}"></image>
+            </view>
+        </view>
+    </view>
+    <view catchtouchmove="preventTouchMove" class="drawer_screen" hidden="{{!getM}}"></view>
+    <view catchtouchmove="preventTouchMove" class="drawer_attr_box" hidden="{{!getM}}">
+        <view class="getM">
+            <image bindtap="close" class="close" mode="widthFix" src="../../../resource/images/close2.png"></image>
+            <view class="getPic">
+                <image class="mianpic" mode="widthFix" src="{{goodsDetail.thumb}}"></image>
+            </view>
+            <view class="expername" style="background:{{appname.maincolor!=''&&appname.maincolor!=null?appname.maincolor:'#7d37e3'}}">{{goodsDetail.name}}</view>
+            <view class="expermain">{{goodsDetail.desc}}</view>
+            <view class="bottom">
+                <view bindtap="paybtn" class="usebtn" data-id="{{goodsDetail.id}}">￥{{goodsDetail.price}}购买</view>
+            </view>
+        </view>
+    </view>
+</view>

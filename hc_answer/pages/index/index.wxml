@@ -1,0 +1,232 @@
+<view class="container" hidden="{{stake==1?true:false}}" style="background: url({{appname.answerimg}}) no-repeat;background-size: 100% 100%;">
+    <view class="getReward" hidden="{{showlogos}}">
+        <view class="main">
+            <image class="pass" mode="widthFix" src="{{appname.owninfoimg}}">
+                <view class="accounts">{{danname}}结算</view>
+                <image class="covers" mode="widthFix" src="{{appname.gdbarimg}}"></image>
+            </image>
+            <scroll-view scrollY class="scroll">
+                <view class="rankings" style="background:{{appname.rankbgcolor!=''&&appname.rankbgcolor!=null?appname.rankbgcolor:'#b589fc'}}" wx:for="{{dan}}" wx:key="index">
+                    <image class="triangle" src="{{appname.ranknumimg}}">
+                        <view class="nums">{{item.sort}}</view>
+                    </image>
+                    <view class="containpic">
+                        <image class="avatar" src="{{item.avatar}}"></image>
+                    </view>
+                    <view class="detail">
+                        <view class="top">
+                            <view class="name" style="color:{{appname.tabfontcolor!=''&&appname.tabfontcolor!=null?appname.tabfontcolor:'#fff'}}">{{item.nickname}}</view>
+                            <view class="forms" style="color:{{appname.tabfontcolor!=''&&appname.tabfontcolor!=null?appname.tabfontcolor:'#fff'}}">来自：{{item.city==null||item.city==''?'未知':item.city}}</view>
+                        </view>
+                        <view class="bottom">
+                            <view class="dan" style="background:{{appname.listbgcolor!=''&&appname.listbgcolor!=null?appname.listbgcolor:'#b589fc'}}">{{item.dan}}</view>
+                            <view style="color:{{appname.tabfontcolor!=''&&appname.tabfontcolor!=null?appname.tabfontcolor:'#fff'}}">等级:{{item.level}}</view>
+                            <view class="starts" style="background:{{appname.maincolor!=''&&appname.maincolor!=null?appname.maincolor:'#7d37e3'}}">
+                                <image class="start" src="../../resource/images/yellowstar.png"></image>
+                {{item.star}}
+              </view>
+                        </view>
+                    </view>
+                </view>
+            </scroll-view>
+            <view class="shareAsave">
+                <button class="share" openType="share" type="groupName">
+                    <image src="../../resource/images/shares.png"></image>
+                    <text>分享</text>
+                </button>
+                <button bindtap="getreward" class="share" style="background:#ED8733;">
+                    <text>领取奖励</text>
+                </button>
+            </view>
+        </view>
+    </view>
+    <view class="apples" hidden="{{apples}}" style="background:url({{appname.seasonbgimg}}) no-repeat;background-size: 100% 100%;">
+        <view class="getHead" hidden="{{getHead}}">
+            <view class="headPic" style="background: url({{mylevel.border}}) no-repeat;background-size: 100% 100%;{{mylevel.border==''?'margin-top:10rpx':''}}">
+                <image class="bg" src="{{mylevel.avatar}}" style="{{mylevel.border==''?'border: 10rpx solid #fff;':''}}"></image>
+            </view>
+            <view class="mynickname">{{mylevel.nickname}}</view>
+            <image class="headpic" mode="widthFix" src="{{border}}" style="{{border==''?'border: 6rpx solid #fff;':''}}"></image>
+            <image class="danname" mode="widthFix" src="../../resource/images/danname.png">
+                <view class="dannames">恭喜获得{{name}}头像框</view>
+            </image>
+            <button bindtap="getHead" class="btnget" hoverClass="none" style="background:{{appname.maincolor!=''&&appname.maincolor!=null?appname.maincolor:'#7d37e3'}}">领取</button>
+        </view>
+        <view class="getdanreward" hidden="{{getdanreward}}">
+            <view class="headPic" style="background: url({{mylevel.border}}) no-repeat;background-size: 100% 100%;{{mylevel.border==''?'margin-top:10rpx':''}}">
+                <image class="bg" src="{{mylevel.avatar}}" style="{{mylevel.border==''?'border: 10rpx solid #fff;':''}}"></image>
+            </view>
+            <view class="mynickname">{{mylevel.nickname}}</view>
+            <image class="headpic" mode="widthFix" src="{{thumb}}"></image>
+            <image class="danname" mode="widthFix" src="../../resource/images/danname.png">
+                <view class="dannames">恭喜获得该段位奖励</view>
+            </image>
+            <button bindtap="getdanreward" class="btnget" hoverClass="none" style="background:{{appname.maincolor!=''&&appname.maincolor!=null?appname.maincolor:'#7d37e3'}}">领取</button>
+        </view>
+        <view class="getdanmoney" hidden="{{getdanmoney}}">
+            <view class="headPic" style="background: url({{mylevel.border}}) no-repeat;background-size: 100% 100%;{{mylevel.border==''?'margin-top:10rpx':''}}">
+                <image class="bg" src="{{mylevel.avatar}}" style="{{mylevel.border==''?'border: 10rpx solid #fff;':''}}"></image>
+            </view>
+            <view class="mynickname">{{mylevel.nickname}}</view>
+            <image class="congratulation" mode="widthFix" src="{{result.img}}"></image>
+            <view class="notice" wx:if="{{resStatus==1}}">
+        {{result.text}}
+      </view>
+            <view class="notice" wx:if="{{resStatus==0}}">
+        {{result.text}}
+      </view>
+            <button bindtap="getdanmoney" class="btnget" hoverClass="none" style="background:{{appname.maincolor!=''&&appname.maincolor!=null?appname.maincolor:'#7d37e3'}}">领取</button>
+        </view>
+    </view>
+    <view class="apples" hidden="{{season}}">
+        <view class="getdanreward" hidden="{{getseason}}">
+            <view class="headPic" style="background: url({{mylevel.border}}) no-repeat;background-size: 100% 100%;{{mylevel.border==''?'margin-top:10rpx':''}}">
+                <image class="bg" src="{{mylevel.avatar}}" style="{{mylevel.border==''?'border: 10rpx solid #fff;':''}}"></image>
+            </view>
+            <view class="mynickname">{{mylevel.nickname}}</view>
+            <image class="pass" mode="widthFix" src="{{appname.owninfoimg}}">
+                <view class="accounts">
+                    <view>{{newname}}结算</view>
+                    <view>{{starttime}}--{{endtime}}</view>
+                </view>
+            </image>
+            <view class="newseason">新赛季已开启 请君努力吧！</view>
+            <button bindtap="getindex" class="btnget" hoverClass="none" style="background:{{appname.maincolor!=''&&appname.maincolor!=null?appname.maincolor:'#7d37e3'}}">知道了</button>
+        </view>
+    </view>
+    <view class="logo" hidden="{{showlogo}}" style="height:{{screenHeight}}px;">
+        <image class="logopic" mode="widthFix" src="{{appname.loginimg}}"></image>
+    </view>
+    <scroll-view scrollY class="scroll" hidden="{{showindex}}" style="height:{{screenHeight}}px;padding-top:20rpx;">
+        <view class="selfMain">
+            <image mode="widthFix" src="{{appname.indextopimg}}">
+                <view class="selfR">
+                    <image bindtap="share" src="{{appname.ownpowerimg}}"></image>
+                    <image bindtap="share1" class="share1" src="{{active.switch==1?appname.ownmoneyimg:''}}"></image>
+                </view>
+                <view class="selfMsg">
+                    <view class="msg">
+                        <view class="selfL">
+                            <view class="headPic" style="background: url({{mylevel.border}}) no-repeat;background-size: 100% 100%;{{mylevel.border==''?'margin-top:10rpx':''}}">
+                                <image class="bg" src="{{mylevel.avatar}}" style="{{mylevel.border==''?'border: 10rpx solid #fff;':''}}"></image>
+                            </view>
+                            <view class="avatarName">
+                                <view class="nickname" style="color:{{appname.nicknamecolor!=''&&appname.nicknamecolor!=null?appname.nicknamecolor:'#fff'}}">{{mylevel.nickname}}</view>
+                                <view class="coin" style="background:{{appname.goldbgcolor!=''&&appname.goldbgcolor!=null?appname.goldbgcolor:'#622ab3'}}">
+                                    <image src="{{appname.goldimg}}"></image>
+                                    <text style="color:{{appname.goldfontcolor!=''&&appname.goldfontcolor!=null?appname.goldfontcolor:'#feb202'}};line-height:50rpx;">{{mylevel.gold}}</text>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="level">
+                        <text style="color:{{appname.nicknamecolor!=''&&appname.nicknamecolor!=null?appname.nicknamecolor:'#fff'}}">LV.{{mylevel.level}}</text>
+                        <view class="progress">
+                            <view class="active" style="width:{{mylevel.expe/mylevel.maxexpe*100}}%;background:{{appname.jdbarcolor!=''&&appname.jdbarcolor!=null?appname.jdbarcolor:'#46138a'}}"></view>
+                        </view>
+                    </view>
+                </view>
+            </image>
+        </view>
+        <view bindtap="showseason" class="selfMain1" wx:if="{{active.switch==1}}">
+            <image mode="widthFix" src="{{active.entry}}">
+                <text class="number">本赛季共产生<text style="color:{{appname.goldfontcolor!=''&&appname.goldfontcolor!=null?appname.goldfontcolor:'#F8AE15'}}">{{people}}</text>位{{active.condition}}</text>
+            </image>
+        </view>
+        <view class="apple">
+            <view class="left">
+                <view bindtap="jump" class="big" data-appid="{{item.appid}}" data-link="{{item.link}}" data-path="{{item.path}}" data-url="{{item.url}}" wx:for="{{left}}" wx:key="index">
+                    <image mode="widthFix" src="{{item.img}}"></image>
+                </view>
+            </view>
+            <view class="right">
+                <view bindtap="jump" class="big" data-appid="{{item.appid}}" data-link="{{item.link}}" data-path="{{item.path}}" data-url="{{item.url}}" wx:for="{{right}}" wx:key="index">
+                    <image mode="widthFix" src="{{item.img}}"></image>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+    <audio id="myAudio" loop="{{!loop}}" src="{{src}}"></audio>
+    <view catchtouchmove="preventTouchMove" class="drawer_screen" wx:if="{{sign==0}}"></view>
+    <view catchtouchmove="preventTouchMove" class="drawer_attr_box" wx:if="{{sign==0}}">
+        <view class="getM">
+            <view class="rewordT" style="background:{{appname.maincolor!=''&&appname.maincolor!=null?appname.maincolor:'#7d37e3'}}">每日登陆奖励</view>
+            <view class="rewordList">
+                <view class="rewordItem" wx:for="{{Signprop}}" wx:key="index">
+                    <view class="cover" wx:if="{{item.status==1}}">
+                        <image class="getrewords" src="../../resource/images/Rstatus.png" wx:if="{{item.status==1}}"></image>
+                    </view>
+                    <view class="rewordTitle" style="background:{{appname.maincolor!=''&&appname.maincolor!=null?appname.maincolor:'#7d37e3'}}">
+                        <view>{{item.name}}</view>
+                        <view class="num" style="color:{{appname.maincolor!=''&&appname.maincolor!=null?appname.maincolor:'#7d37e3'}}">×{{item.num}}</view>
+                    </view>
+                    <image class="rewords" src="{{item.thumb}}"></image>
+                    <view class="day">{{item.show}}</view>
+                </view>
+            </view>
+        </view>
+        <form bindsubmit="getBtn" reportSubmit="true">
+            <button class="form" formType="submit" hoverClass="none">
+                <view class="getBtn" style="background:{{appname.maincolor!=''&&appname.maincolor!=null?appname.maincolor:'#7d37e3'}}">领取</view>
+            </button>
+        </form>
+    </view>
+    <button bindtap="{{appname.kfbtn==1?'Publicclose':''}}" class="content" hidden="{{showindex}}" hoverClass="none" openType="{{appname.kfbtn==1?'':'contact'}}" wx:if="{{appname.kfinto!=''&&appname.kfinto!=null}}">
+        <image class="kf" src="{{appname.kfinto}}">
+            <view class="contenttitle" style="color:{{appname.nicknamecolor!=''&&appname.nicknamecolor!=null?appname.nicknamecolor:'#fff'}}">{{contenttitle}}</view>
+        </image>
+    </button>
+</view>
+<view catchtouchmove="preventTouchMove" class="drawer_screen" style="opacity:0.5;" wx:if="{{changlle==0}}"></view>
+<view catchtouchmove="preventTouchMove" class="drawer_attrbox" wx:if="{{changlle==0}}">
+    <image bindtap="closeT" class="closeT" src="../../resource/images/close2.png"></image>
+    <image class="showimg" mode="widthFix" src="{{active.click}}"></image>
+    <form bindsubmit="changlle" reportSubmit="true">
+        <button class="changlle" formType="submit" hoverClass="none">我要上{{active.condition}}</button>
+    </form>
+</view>
+<view hidden="{{switchs}}">
+    <view catchtouchmove="preventTouchMove" class="drawer_screen" hidden="{{Notice}}"></view>
+    <view animation="{{animationData}}" catchtouchmove="preventTouchMove" class="NoticeD" hidden="{{Notice}}">
+        <view class="Notice">
+            <view class="noticeT" style="background:{{appname.maincolor!=''&&appname.maincolor!=null?appname.maincolor:'#7d37e3'}}">公告</view>
+            <view class="noticeM">
+                <view class="mainT">{{notice.title}}</view>
+                <view class="mainarticle">{{notice.content}}</view>
+            </view>
+            <view class="Noticebtn">
+                <button bindtap="Notice" class="Noticebtns" style="background:{{appname.maincolor!=''&&appname.maincolor!=null?appname.maincolor:'#7d37e3'}}">知道了</button>
+            </view>
+        </view>
+    </view>
+</view>
+<scroll-view scrollY class="pian" hidden="{{stake==1?'':true}}" style="background: url({{appname.answerimg}}) no-repeat;background-size: 100% 100%;">
+    <view class="pian_sacba">
+        <view class="pian_ssa">
+            <image class="pian_zheng" src="{{appname.indextopimg}}"></image>
+            <open-data class="pian_tyopu" type="userAvatarUrl"></open-data>
+            <open-data class="pian_tyoputext" type="userNickName"></open-data>
+        </view>
+        <view class="apple">
+            <view class="left">
+                <view bindtap="xiangqig" class="big" data-id="{{item.id}}" data-link="{{item.link}}" wx:for="{{shenhe.left}}" wx:key="index">
+                    <image class="shenpic" mode="widthFix" src="{{item.img}}">
+                        <view class="shenname">{{item.name}}</view>
+                    </image>
+                </view>
+            </view>
+            <view class="right">
+                <view bindtap="xiangqig" class="big" data-id="{{item.id}}" data-link="{{item.link}}" wx:for="{{shenhe.right}}" wx:key="index">
+                    <image class="shenpic" mode="widthFix" src="{{item.img}}">
+                        <view class="shenname">{{item.name}}</view>
+                    </image>
+                </view>
+            </view>
+        </view>
+    </view>
+</scroll-view>
+<view catchtouchmove="preventTouchMove" class="drawer_screen" style="opacity:0.5;" wx:if="{{Public==1}}"></view>
+<view catchtouchmove="preventTouchMove" class="PublicM" wx:if="{{Public==1}}">
+    <image class="Public" mode="widthFix" src="{{appname.wxgzhimg}}"></image>
+    <image bindtap="Publicclose" class="Publicclose" src="../../resource/images/close2.png"></image>
+</view>

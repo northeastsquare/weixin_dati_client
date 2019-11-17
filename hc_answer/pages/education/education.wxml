@@ -1,0 +1,5 @@
+<import src="../../../wxParse/wxParse.wxml"></import>
+<scroll-view scrollY class="wxParse" style="padding-bottom:100rpx;">
+    <template is="wxParse" data="{{wxParseData:article.nodes}}"></template>
+</scroll-view>
+<image class="cavjdjsj" src="../../resource/images/neiye.png"></image>

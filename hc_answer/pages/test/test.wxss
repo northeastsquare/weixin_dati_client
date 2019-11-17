@@ -1,0 +1,22 @@
+.canvas {
+    width: 500rpx;
+    height: 500rpx;
+}
+
+.progress {
+    background: #eee;
+    height: 30rpx;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    font-size: 20rpx;
+    color: green;
+}
+
+.active {
+    background: green;
+    height: 30rpx;
+    text-align: right;
+    font-size: 20rpx;
+    color: #fff;
+}

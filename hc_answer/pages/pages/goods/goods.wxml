@@ -1,0 +1,104 @@
+<view class="container" style="background: url({{answerimg}}) no-repeat;background-size: 100% 100%;">
+    <view class="apple">
+        <image class="cover" mode="widthFix" src="{{appname.gdbarimg}}"></image>
+        <scroll-view scrollY class="goodsList" style="height:68%;">
+            <view class="goods">
+                <view bindtap="getdetail" class="goodsdetail" data-id="{{item.id}}" wx:for="{{goods}}" wx:key="index">
+                    <view class="goodsname" style="background:{{appname.maincolor!=''&&appname.maincolor!=null?appname.maincolor:'#7d37e3'}}">{{item.name}}</view>
+                    <view class="goodsPic">
+                        <view class="mianpics">
+                            <image class="mianpic" src="{{item.thumb}}"></image>
+                            <view class="usenum" style="background:{{appname.maincolor!=''&&appname.maincolor!=null?appname.maincolor:'#7d37e3'}}" wx:if="{{item.cc!=0}}">{{item.cc}}场</view>
+                            <view class="usenum" style="background:{{appname.maincolor!=''&&appname.maincolor!=null?appname.maincolor:'#7d37e3'}}" wx:if="{{item.sj!=0}}">{{item.sj}}小时</view>
+                            <image class="effectpic" data-type="{{item.type}}" src="../../../resource/images/exper02.png" wx:if="{{item.jy!=0&&(item.type==5||item.type==6||item.type==7)}}">
+                                <view class="effect">+{{item.jy}}%</view>
+                            </image>
+                            <image class="effectpic" data-type="{{item.type}}" src="../../../resource/images/exper02.png" wx:if="{{item.jb!=0&&(item.type==5||item.type==6||item.type==7)}}">
+                                <view class="effect">+{{item.jb}}%</view>
+                            </image>
+                            <image class="effectpic" data-type="{{item.type}}" src="../../../resource/images/exper02.png" wx:if="{{item.jf!=0&&(item.type==5||item.type==6||item.type==7)}}">
+                                <view class="effect">+{{item.jf}}%</view>
+                            </image>
+                        </view>
+                    </view>
+                    <view class="price" style="color:{{appname.maincolor!=''&&appname.maincolor!=null?appname.maincolor:'#7d37e3'}}">×{{item.num}}</view>
+                </view>
+            </view>
+        </scroll-view>
+        <view class="notice">
+            <text style="color:{{appname.nicknamecolor!=''&&appname.nicknamecolor!=null?appname.nicknamecolor:'#fff'}}">点击即可使用物品</text>
+        </view>
+    </view>
+    <view catchtouchmove="preventTouchMove" class="drawer_screen" hidden="{{!getM}}"></view>
+    <view catchtouchmove="preventTouchMove" class="drawer_attr_box" hidden="{{!getM}}">
+        <view class="getM">
+            <image bindtap="close" class="close" src="../../../resource/images/close2.png"></image>
+            <view class="getPic">
+                <view class="mianpics">
+                    <image class="mianpic" src="{{goodsdetail.thumb}}"></image>
+                    <view class="usenum" style="background:{{appname.maincolor!=''&&appname.maincolor!=null?appname.maincolor:'#7d37e3'}}" wx:if="{{goodsdetail.cc!=0}}">{{goodsdetail.cc}}场</view>
+                    <view class="usenum" style="background:{{appname.maincolor!=''&&appname.maincolor!=null?appname.maincolor:'#7d37e3'}}" wx:if="{{goodsdetail.sj!=0}}">{{goodsdetail.sj}}小时</view>
+                    <image class="effectpic" src="../../../resource/images/exper02.png" wx:if="{{goodsdetail.jy!=0&&(goodsdetail.type==5||goodsdetail.type==6||goodsdetail.type==7)}}">
+                        <view class="effect">+{{goodsdetail.jy}}%</view>
+                    </image>
+                    <image class="effectpic" src="../../../resource/images/exper02.png" wx:if="{{goodsdetail.jb!=0&&(goodsdetail.type==5||goodsdetail.type==6||goodsdetail.type==7)}}">
+                        <view class="effect">+{{goodsdetail.jb}}%</view>
+                    </image>
+                    <image class="effectpic" src="../../../resource/images/exper02.png" wx:if="{{goodsdetail.jf!=0&&(goodsdetail.type==5||goodsdetail.type==6||goodsdetail.type==7)}}">
+                        <view class="effect">+{{goodsdetail.jf}}%</view>
+                    </image>
+                </view>
+            </view>
+            <view class="expername" style="background:{{appname.maincolor!=''&&appname.maincolor!=null?appname.maincolor:'#7d37e3'}}">{{goodsdetail.name}}</view>
+            <view class="expermain">{{goodsdetail.desc}}</view>
+            <view class="bottom">
+                <view class="surplus">剩余数量{{goodsdetail.num}}</view>
+                <view bindtap="use" class="usebtn" data-id="{{goodsdetail.id}}" data-type="{{goodsdetail.type}}">使用</view>
+            </view>
+        </view>
+    </view>
+    <view catchtouchmove="preventTouchMove" class="drawer_screen" hidden="{{!getGoods}}"></view>
+    <view catchtouchmove="preventTouchMove" class="drawer_attr_box" hidden="{{!getGoods}}" style="height:60%;">
+        <view class="getM">
+            <image bindtap="close1" class="close" src="../../../resource/images/close2.png"></image>
+            <view class="getPic">
+                <view class="mianpics">
+                    <image class="mianpic" src="{{goodsdetail.thumb}}"></image>
+                    <view class="usenum" data-num="{{goodsdetail.cc}}" style="background:{{appname.maincolor!=''&&appname.maincolor!=null?appname.maincolor:'#7d37e3'}}" wx:if="{{goodsdetail.cc!=0}}">{{goodsdetail.cc}}场</view>
+                    <image class="effectpic" src="../../../resource/images/exper02.png" wx:if="{{goodsdetail.jy!=0&&(goodsdetail.type==5||goodsdetail.type==6)}}">
+                        <view class="effect">+{{goodsdetail.jy}}%</view>
+                    </image>
+                    <image class="effectpic" src="../../../resource/images/exper02.png" wx:if="{{goodsdetail.jb!=0&&(goodsdetail.type==5||goodsdetail.type==6)}}">
+                        <view class="effect">+{{goodsdetail.jb}}%</view>
+                    </image>
+                    <image class="effectpic" src="../../../resource/images/exper02.png" wx:if="{{goodsdetail.jf!=0&&(goodsdetail.type==5||goodsdetail.type==6)}}">
+                        <view class="effect">+{{goodsdetail.jf}}%</view>
+                    </image>
+                </view>
+            </view>
+            <view class="expername">{{goodsdetail.name}}</view>
+            <view class="goods">
+                <view bindtap="getdetail" class="goodsdetail" data-id="{{item.id}}" wx:for="{{getAllGoods}}" wx:key="index">
+                    <view class="goodsname" style="font-size:20rpx;">{{item.name}}</view>
+                    <view class="goodsPic">
+                        <view class="mianpics">
+                            <image class="mianpic mianpic1" src="{{item.thumb}}"></image>
+                            <view class="usenum" style="background:{{appname.maincolor!=''&&appname.maincolor!=null?appname.maincolor:'#7d37e3'}}" wx:if="{{item.cc!=0}}">{{item.cc}}场</view>
+                            <view class="usenum" style="background:{{appname.maincolor!=''&&appname.maincolor!=null?appname.maincolor:'#7d37e3'}}" wx:if="{{item.sj!=0}}">{{item.sj}}小时</view>
+                            <image class="effectpic effectpic1" src="../../../resource/images/exper02.png" wx:if="{{item.jy!=0&&(item.type==5||item.type==6||item.type==7)}}">
+                                <view class="effect">+{{item.jy}}%</view>
+                            </image>
+                            <image class="effectpic effectpic1" src="../../../resource/images/exper02.png" wx:if="{{item.jb!=0&&(item.type==5||item.type==6||item.type==7)}}">
+                                <view class="effect">+{{item.jb}}%</view>
+                            </image>
+                            <image class="effectpic effectpic1" src="../../../resource/images/exper02.png" wx:if="{{item.jf!=0&&(item.type==5||item.type==6||item.type==7)}}">
+                                <view class="effect">+{{item.jf}}%</view>
+                            </image>
+                        </view>
+                    </view>
+                    <view class="price" style="color:{{appname.maincolor!=''&&appname.maincolor!=null?appname.maincolor:'#7d37e3'}}">×{{item.num}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

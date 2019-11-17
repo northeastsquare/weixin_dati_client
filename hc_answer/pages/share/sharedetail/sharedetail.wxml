@@ -1,0 +1,50 @@
+<view class="container" style="background: url({{answerimg}}) no-repeat;background-size: 100% 100%;">
+    <view class="apple" style="background:url({{appname.seasonbgimg}}) no-repeat;background-size: 100% 100%;">
+        <view class="top">
+            <button class="share" hoverClass="none" openType="share">
+                <image src="{{appname.ownpowershareimg}}"></image>
+            </button>
+            <button bindgetuserinfo="getUserInfo" class="share" hoverClass="none" lang="zh_CN" openType="getUserInfo">
+                <image src="{{appname.ownpowerimg}}"></image>
+            </button>
+        </view>
+        <view class="avatar">
+            <image src="{{user.avatar}}"></image>
+            <view style="color:{{appname.nicknamecolor!=''&&appname.nicknamecolor!=null?appname.nicknamecolor:'#fff'}}">{{user.nickname}}</view>
+        </view>
+        <view class="level">
+            <text style="color:{{appname.nicknamecolor!=''&&appname.nicknamecolor!=null?appname.nicknamecolor:'#fff'}}">LV.{{user.level}}</text>
+            <view class="progress">
+                <view class="active" style="width:{{user.expe/user.maxexpe*100}}%;background:{{appname.jdbarcolor!=''&&appname.jdbarcolor!=null?appname.jdbarcolor:'#46138a'}}"></view>
+            </view>
+        </view>
+        <ec-canvas canvasId="mychart-graph" class="canvas" ec="{{ec}}" id="mychart-dom-graph" style="width:276px;height:276px;"></ec-canvas>
+        <view style="margin-top:540rpx;">
+            <view class="mydetail" style="background:{{appname.maincolor!=''&&appname.maincolor!=null?appname.maincolor:'#622AB3'}};">
+                <view class="left" style="border-right:2rpx solid #fff;">
+                    <text style="color:{{appname.nicknamecolor!=''&&appname.nicknamecolor!=null?appname.nicknamecolor:'#fff'}}">用户编号：</text>{{user.uid}}
+        </view>
+                <view class="left">
+                    <text style="color:{{appname.nicknamecolor!=''&&appname.nicknamecolor!=null?appname.nicknamecolor:'#fff'}}">学历：</text>{{user.name}}
+        </view>
+            </view>
+            <view class="mydetail" style="background:{{appname.maincolor!=''&&appname.maincolor!=null?appname.maincolor:'#622AB3'}};">
+                <view class="left" style="border-right:2rpx solid #fff;">
+                    <text style="color:{{appname.nicknamecolor!=''&&appname.nicknamecolor!=null?appname.nicknamecolor:'#fff'}}">胜率：</text>{{mydetail.winrate}}
+        </view>
+                <view class="left">
+                    <text style="color:{{appname.nicknamecolor!=''&&appname.nicknamecolor!=null?appname.nicknamecolor:'#fff'}}">总场次：</text>{{mydetail.zcc}}
+        </view>
+            </view>
+            <view class="mydetail" style="background:{{appname.maincolor!=''&&appname.maincolor!=null?appname.maincolor:'#622AB3'}};">
+                <view class="left" style="border-right:2rpx solid #fff;">
+                    <text style="color:{{appname.nicknamecolor!=''&&appname.nicknamecolor!=null?appname.nicknamecolor:'#fff'}}">经验：</text>{{user.expe}}
+        </view>
+                <view class="left">
+                    <text style="color:{{appname.nicknamecolor!=''&&appname.nicknamecolor!=null?appname.nicknamecolor:'#fff'}}">胜场：</text>{{mydetail.win}}
+        </view>
+            </view>
+        </view>
+    </view>
+    <view bindtap="index" class="footer" style="color:{{appname.nicknamecolor!=''&&appname.nicknamecolor!=null?appname.nicknamecolor:'#fff'}}">返回首页</view>
+</view>

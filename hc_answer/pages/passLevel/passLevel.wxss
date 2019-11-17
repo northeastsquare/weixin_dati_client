@@ -1,0 +1,460 @@
+.apple {
+    padding-top: 5%;
+    height: 97%;
+}
+
+.pass {
+    width: 94%;
+    padding: 0 3%;
+    border-radius: 20rpx;
+    position: relative;
+    height: 22%;
+}
+
+.season {
+    width: 94%;
+    padding-top: 4%;
+    position: absolute;
+    top: 0;
+    height: 96%;
+}
+
+.dan {
+    position: absolute;
+    top: 10rpx;
+    right: 10rpx;
+    width: 60rpx;
+    height: 60rpx;
+}
+
+.seasonMain {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 94%;
+    padding: 0rpx 3%;
+    justify-content: space-between;
+    overflow: hidden;
+    position: absolute;
+    bottom: 20%;
+}
+
+.titleMain {
+    text-align: center;
+    color: #fff;
+}
+
+.title {
+    font-size: 38rpx;
+}
+
+.time {
+    font-size: 28rpx;
+}
+
+.coin {
+    display: flex;
+    max-width: 280rpx;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 20rpx 0 0;
+    height: 50rpx;
+    font-size: 38rpx;
+    line-height: 40rpx;
+    color: #ffb100;
+    background: #622ab3;
+    border-radius: 25rpx;
+}
+
+.coinPic {
+    width: 50rpx;
+    height: 50rpx;
+    border-radius: 50%;
+    margin-right: 20rpx;
+}
+
+.useprop {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 80rpx;
+    padding: 0 0 0 10rpx;
+    background: #622ab3;
+    border-radius: 40rpx;
+}
+
+.useprop image {
+    width: 60rpx;
+    height: 60rpx;
+    margin-right: 10rpx;
+    border-radius: 50%;
+}
+
+.pic {
+    position: relative;
+    display: block;
+    height: 60rpx;
+}
+
+.usereward {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    right: 10rpx;
+    font-size: 18rpx;
+    text-align: right;
+    color: #ffb100;
+}
+
+.cover {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -46%;
+    width: 92%;
+}
+
+.levels {
+    position: relative;
+    top: -26rpx;
+    width: 100%;
+}
+
+.level {
+    width: 90%;
+    padding: 0 5%;
+    height: 224rpx;
+    margin-bottom: 20rpx;
+    position: relative;
+}
+
+.levelBg {
+    width: 100%;
+    height: 100%;
+    border-radius: 20rpx;
+    position: relative;
+}
+
+.levelMain {
+    width: 92%;
+    height: 164rpx;
+    padding: 30rpx 4%;
+    border-radius: 20rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    color: #fff;
+    font-size: 30rpx;
+    position: absolute;
+    top: 0;
+}
+
+.levelLeft>view:nth-child(2) {
+    margin: 20rpx 0;
+}
+
+.levelTitle {
+    font-size: 40rpx;
+}
+
+.levelRight {
+    height: 50rpx;
+    padding: 2rpx 10rpx;
+    border-radius: 26rpx;
+    background: #622ab3;
+}
+
+.levelRight image {
+    width: 44rpx;
+    height: 44rpx;
+}
+
+.row image {
+    width: 30rpx;
+    height: 30rpx;
+    margin-right: 10rpx;
+    border-radius: 50%;
+}
+
+.coins {
+    color: #f3b233;
+}
+
+.shadow {
+    width: 90%;
+    height: 224rpx;
+    position: absolute;
+    top: 0;
+    background: #fff;
+    opacity: 0.5;
+    border-radius: 20rpx;
+}
+
+.lock {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -50rpx;
+    margin-left: -50rpx;
+    width: 100rpx;
+    height: 100rpx;
+}
+
+.more {
+    width: 70rpx;
+    height: 400rpx;
+    margin: 0 auto;
+    display: block;
+}
+
+.drawer_screen {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #000;
+    opacity: 0.8;
+    overflow: hidden;
+    z-index: 999999999999;
+    color: #fff;
+}
+
+.drawer_attr_box {
+    width: 70%;
+    height: 56%;
+    position: fixed;
+    top: 50%;
+    margin-top: -50%;
+    left: 50%;
+    margin-left: -35%;
+    z-index: 99999999999999999999;
+}
+
+.getM {
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    background: #fff;
+    border-radius: 20rpx;
+    margin: 0;
+}
+
+.getPic {
+    width: 130rpx;
+    height: 130rpx;
+    margin: -90rpx auto 0;
+    display: block;
+    border-radius: 50%;
+    border: 6rpx solid #fff;
+    background: #fff;
+}
+
+.mianpic {
+    width: 130rpx;
+    height: 130rpx;
+    border-radius: 50%;
+}
+
+.mianpics {
+    position: relative;
+}
+
+.effectpic {
+    width: 130rpx;
+    position: relative;
+    display: block;
+    bottom: 30rpx;
+    overflow: initial;
+}
+
+.effect {
+    width: 130rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+    font-size: 24rpx;
+    position: absolute;
+    bottom: 0;
+    color: #fff;
+    text-align: center;
+}
+
+.usenum {
+    height: 30rpx;
+    line-height: 30rpx;
+    padding: 0rpx 10rpx;
+    position: absolute;
+    top: 15%;
+    right: 0%;
+    background: #7743c8;
+    font-size: 24rpx;
+    color: #fff;
+    border-radius: 20rpx;
+}
+
+.close {
+    position: absolute;
+    top: 16rpx;
+    right: 20rpx;
+    width: 7%;
+}
+
+.expername {
+    background: #7743c9;
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    margin-top: 30rpx;
+    font-size: 40rpx;
+    padding: 20rpx 0;
+}
+
+.expermain {
+    font-size: 32rpx;
+    color: #4a4a4a;
+    font-weight: bolder;
+    width: 80%;
+    margin: 100rpx auto;
+}
+
+.surplus {
+    font-size: 22rpx;
+    color: #7743c8;
+    text-align: center;
+    margin: 20rpx 0;
+}
+
+.usebtn {
+    font-size: 50rpx;
+    background: #09BB07;
+    color: #fff;
+    width: 60%;
+    border-radius: 14rpx;
+    text-align: center;
+    padding: 14rpx 0;
+    margin: 0 auto;
+    height: 80rpx;
+    line-height: 80rpx!important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer {
+    width: 100%;
+    position: absolute;
+    bottom: 40rpx;
+}
+
+.form {
+    margin: 0;
+    padding: 0;
+    background: none;
+    line-height: 40rpx!important;
+    text-align: left;
+    height: 224rpx;
+}
+
+button:after {
+    border: none;
+    line-height: none!important;
+}
+
+.apples {
+    width: 92%;
+    margin: 5% 4% 0;
+    height: 90%;
+    border-radius: 20rpx;
+    padding-top: 30rpx;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999999999999999999;
+}
+
+.headPic {
+    position: relative;
+    width: 120rpx;
+    height: 120rpx;
+    margin: auto;
+    display: block;
+    padding: 0;
+}
+
+.bg {
+    margin: 0;
+    padding: 0;
+    width: 88rpx;
+    height: 88rpx;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -44rpx;
+    margin-left: -44rpx;
+    border-radius: 50%;
+}
+
+.mynickname {
+    font-size: 30rpx;
+    text-align: center;
+    color: #fff;
+    margin: 20rpx 0;
+}
+
+.headpic {
+    width: 200rpx;
+    height: 200rpx;
+    display: block;
+    margin: auto;
+    margin-top: 60rpx;
+}
+
+.danname {
+    width: 80%;
+    display: block;
+    margin: 100rpx auto;
+    position: relative;
+}
+
+.newseason {
+    width: 80%;
+    margin: 100rpx auto;
+    color: #fff;
+    font-size: 26rpx;
+    text-align: center;
+}
+
+.dannames {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    height: 80rpx;
+    line-height: 80rpx;
+    margin-top: -40rpx;
+    color: #fff;
+    font-size: 26rpx;
+    text-align: center;
+}
+
+.btnget {
+    background: #622ab3;
+    width: 40%;
+    margin: 0 auto;
+    color: #fff;
+}
+
+.notice {
+    width: 60%;
+    text-align: center;
+    margin: 50rpx 20% 100rpx;
+    font-size: 30rpx;
+    color: #fff;
+    line-height: 50rpx;
+}
+
+.congratulation {
+    width: 70%;
+    display: block;
+    margin: auto;
+}
